@@ -19,6 +19,7 @@ func AuthUnaryInterceptor(parentCtx context.Context, req interface{}, _ *grpc.Un
 // Also, it attaches tracing to the context
 func AuthStreamInterceptor(srv interface{}, ss grpc.ServerStream, _ *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
 	// TODO - create a new auth client
+	//!fixme - validate credentials
 	return handler(srv, ss)
 }
 
